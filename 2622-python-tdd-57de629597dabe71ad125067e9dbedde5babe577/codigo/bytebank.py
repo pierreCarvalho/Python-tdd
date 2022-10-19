@@ -25,6 +25,19 @@ class Funcionario:
         nome_quebrado = nome_completo.split(" ")
         return nome_quebrado[-1]
 
+    def socio(self):
+        sobrenomes = ["Bragança", "Windsor", "Bourbon", "Yamato", "Ptolomeu"]
+
+        if self.sobrenome() in sobrenomes:
+            return True
+        else:
+            return False
+
+    def decrescimo_salario(self):
+        if self._salario >= 100000 and self.socio():
+            self._salario = self._salario - (self._salario * 0.1)
+        
+
     def calcular_bonus(self):
         valor = self._salario * 0.1
         if valor > 1000:
