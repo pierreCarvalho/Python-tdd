@@ -27,14 +27,11 @@ class Funcionario:
 
     def socio(self):
         sobrenomes = ["Bragança", "Windsor", "Bourbon", "Yamato", "Ptolomeu"]
-
-        if self.sobrenome() in sobrenomes:
-            return True
-        else:
-            return False
+        return (self._salario >=100000) and (self.sobrenome() in sobrenomes)
+        
 
     def decrescimo_salario(self):
-        if self._salario >= 100000 and self.socio():
+        if self.socio():
             self._salario = self._salario - (self._salario * 0.1)
         
 
